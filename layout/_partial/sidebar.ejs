@@ -1,5 +1,12 @@
-<div id="local-search-result"></div>
+
+
 <aside id="sidebar"<% if (theme.sidebar === 'bottom'){ %> class="outer"<% } %>>
+  <div class='widget-wrap search_res'>   
+      <h3 class="widget-title">Search Result</h3>
+      <div class="widget">
+          <div id="local-search-result"></div> 
+  </div>
+  </div>
   <% theme.widgets.forEach(function(widget){ %>
     <%- partial('_widget/' + widget) %>
   <% }) %>

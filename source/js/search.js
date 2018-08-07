@@ -32,18 +32,20 @@ var searchFunc = function(path, search_id, content_id) {
                     url: $( "url" , this).text()
                 };
             }).get();
-
             var $input = document.getElementById(search_id);
 			if (!$input) return;
             var $resultContent = document.getElementById(content_id);
             if ($("#local-search-input").length > 0) {
-              
                 $input.addEventListener('input', function () {
                     var str = '<ul class=\"search-result-list\">';
                     var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
                     $resultContent.innerHTML = "";
                     if (this.value.trim().length <= 0) {
                         return;
+                    }
+                   
+                    if(this.value.length > 0){
+                        $('.search_res').show();
                     }
                     // perform local searching
                     datas.forEach(function (data) {
@@ -86,6 +88,7 @@ var searchFunc = function(path, search_id, content_id) {
                             var content = data.content.trim().replace(/<[^>]+>/g, "");
                             if (first_occur >= 0) {
                                 // cut out 100 characters
+                               
                                 var start = first_occur - 20;
                                 var end = first_occur + 80;
 
@@ -109,7 +112,7 @@ var searchFunc = function(path, search_id, content_id) {
                                     match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
                                 });
 
-                               str += "<p class=\"search-result\">" + match_content + "...</p>"
+                               str += "<p class=\"search-result\">" + match_content.substr(0,100) + "...</p>"
                             }
                             str += "</li>";
                         }

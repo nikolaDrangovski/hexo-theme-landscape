@@ -25,7 +25,9 @@
   });
 
   $('#local-search-input').on('blur', function(){
-    // $(this).val('');
+    if($(this).val().length == 0){
+        $('.search_res').hide();
+     }
     startSearchAnim();
     $searchWrap.removeClass('on');
     stopSearchAnim();
