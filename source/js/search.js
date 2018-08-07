@@ -24,6 +24,7 @@ var searchFunc = function(path, search_id, content_id) {
         url: path,
         dataType: "xml",
         success: function( xmlResponse ) {
+            console.log(xmlResponse)
            
             // get the contents from search data
             var datas = $( "entry", xmlResponse ).map(function() {
@@ -60,7 +61,8 @@ var searchFunc = function(path, search_id, content_id) {
                         var index_content = -1;
                         var first_occur = -1;
                         // only match artiles with not empty contents
-                        if (data_content !== '') {
+                        // add also not empty title for search to match title now
+                        if (data_content !== '' || data.title !== '') {
                             keywords.forEach(function (keyword, i) {
                                 index_title = data_title.indexOf(keyword);
                                 index_content = data_content.indexOf(keyword);
