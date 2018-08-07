@@ -19,10 +19,20 @@
         <% } %>
       </nav>
       <nav id="sub-nav">
+          <% if (theme.githubPage){ %>
+          <a id="nav-github-link" class="nav-icon" href="<%- url_for(theme.githubPage) %>" title="Github page"></a>
+          <% } %>
+          <% if (theme.youtubePage){ %>
+            <a id="nav-youtube-link" class="nav-icon" href="<%- url_for(theme.youtubePage) %>" title="Youtube page"></a>
+          <% } %>
+          <% if (theme.facebookPage){ %>
+            <a id="nav-facebook-link" class="nav-icon" href="<%- url_for(theme.facebookPage) %>" title="Facebook page"></a>
+          <% } %>
+
         <% if (theme.rss){ %>
           <a id="nav-rss-link" class="nav-icon" href="<%- url_for(theme.rss) %>" title="<%= __('rss_feed') %>"></a>
         <% } %>
-        <a id="nav-github-link" class="nav-icon" href="<%- url_for(theme.githubPage) %>" title="Github page"></a>
+       
         <a id="nav-search-btn" class="nav-icon" title="<%= __('search') %>"></a>
       </nav>
       <div id="search-form-wrap">
