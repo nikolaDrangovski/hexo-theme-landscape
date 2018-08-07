@@ -2,7 +2,9 @@
 menu:
   Home: /
   Archives: /archives
-rss: /atom.xml
+rss: /atosm.xml
+githubPage: https://github.com/nikolaDrangovski
+
 
 # Content
 excerpt_link: Read More
