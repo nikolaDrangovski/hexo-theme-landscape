@@ -24,9 +24,7 @@ var searchFunc = function(path, search_id, content_id) {
         url: path,
         dataType: "xml",
         success: function( xmlResponse ) {
-            console.log(xmlResponse)
-           
-            // get the contents from search data
+              // get the contents from search data
             var datas = $( "entry", xmlResponse ).map(function() {
                 return {
                     title: $( "title", this ).text(),

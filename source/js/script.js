@@ -17,15 +17,15 @@
 
   $('#nav-search-btn').on('click', function(){
     if (isSearchAnim) return;
-
     startSearchAnim();
     $searchWrap.addClass('on');
     stopSearchAnim(function(){
-      $('.search-form-input').focus();
+      $('#local-search-input').focus();
     });
   });
 
-  $('.search-form-input').on('blur', function(){
+  $('#local-search-input').on('blur', function(){
+    // $(this).val('');
     startSearchAnim();
     $searchWrap.removeClass('on');
     stopSearchAnim();
