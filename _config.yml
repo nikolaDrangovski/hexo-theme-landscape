@@ -11,6 +11,10 @@ facebookPage: /fb
 excerpt_link: Read More
 fancybox: true
 
+search:
+  path: search.xml
+  field: post
+
 # Sidebar
 sidebar: right
 widgets:
@@ -19,6 +23,7 @@ widgets:
 - tagcloud
 - archive
 - recent_posts
+
 
 # display widgets at the bottom of index pages (pagination == 2)
 index_widgets:

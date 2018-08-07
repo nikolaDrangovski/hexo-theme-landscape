@@ -116,7 +116,7 @@ $nav-link
 
 #nav-github-link
   &:before
-    content: "\f09b"
+    content: "\f092"
 
 #nav-youtube-link
   &:before
@@ -125,6 +125,24 @@ $nav-link
 #nav-facebook-link
   &:before
     content: "\f082"
+
+#logo {
+  font-size: 30px;
+  opacity: .7
+  }
+@media only screen and (max-width: 478px) {
+   #logo{
+    font-size: 10px;
+    float: left;
+    margin-left: 50px;
+   }
+}
+@media only screen and (max-width: 766px) {
+    #logo{
+    font-size: 15px;
+     }
+}
+
 
 #nav-search-btn
   &:before
